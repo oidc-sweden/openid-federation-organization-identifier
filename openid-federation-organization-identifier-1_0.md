@@ -99,13 +99,13 @@ By enforcing the value for `organization_identifier` through metadata policy, th
 "metadata_policy" : {
   "openid_relying_party": {
     "organization_identifier": {
-      "value": "0195:5590026352"
+      "value": "urn:glue:iso6523:0195:5590026352"
     }
   }
 }
 ```
 
-**Example**: An example of a metadata policy in a Subordinate Statement, where the `organization_identifier` is set to a fixed and validated value. In this case, the identifier is expressed using the [@?ISO.6523] format.
+**Example**: An example of a metadata policy in a Subordinate Statement, where the `organization_identifier` is set to a fixed, validated value. In this case, the identifier is expressed in the [@?ISO.6523] format using a GLUE URI [@?I-D.ietf-spice-glue-id].
 
 # IANA Considerations
 
@@ -170,7 +170,7 @@ We would like to thank the following individuals for their comments, ideas, and 
 <reference anchor="OpenID.Federation" target="https://openid.net/specs/openid-federation-1_0.html">
   <front>
     <title>OpenID Federation 1.0</title>
-    <author fullname="R. Hedberg, Ed.">
+    <author fullname="Roland Hedberg">
       <organization>independent</organization>
     </author>
     <author fullname="Michael B. Jones">
@@ -188,7 +188,7 @@ We would like to thank the following individuals for their comments, ideas, and 
     <author fullname="Vladimir Dzhuvinov">
       <organization>Connect2id</organization>
     </author>
-    <date day="4" month="December" year="2025"/>
+    <date day="17" month="February" year="2026"/>
   </front>
 </reference>
 

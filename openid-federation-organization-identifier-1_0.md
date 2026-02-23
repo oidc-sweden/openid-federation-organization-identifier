@@ -1,5 +1,5 @@
 %%%
-title = "OpenID Federation Organization Identifier Metadata Parameter 1.0 - draft 00"
+title = "OpenID Federation Organization Identifier Metadata Parameter 1.0 - draft 01"
 abbrev = "openid-federation-organization-identifier"
 ipr = "none"
 workgroup = "OpenID Connect A/B"
@@ -70,20 +70,20 @@ This specification uses the terms "OpenID Provider (OP)" and "Relying Party (RP)
 This specification extends [@!OpenID.Federation] with the following metadata parameter:
 
 `organization_identifier`
-: <br>OPTIONAL. A string that uniquely identifies the organization owning this Entity. The format of this identifier is federation specific and SHOULD be defined by federations supporting the parameter. 
+: <br>OPTIONAL. A string that uniquely identifies the organization owning this Entity. The format of this identifier is context specific and SHOULD be defined by federations supporting the parameter. 
 
 ```json=
 "metadata" : {
   "openid_relying_party" : {
     "organization_name#en" : "Example Company",
     "organization_name#sv" : "Exampelföretaget",
-    "organization_identifier" : "0195:5590026352",
+    "organization_identifier" : "urn:glue:lei:529900T8BM49AURSDO55",
     ...
   }
 },
 ```
 
-**Example**: An excerpt of an OpenID Relying Party's metadata where the Entity is owned by the "Example Company". This company is in this example uniquely identified using the [ISO/IEC 6523](https://www.iso.org/standard/82246.html) identifier for the organization.
+**Example**: An excerpt of an OpenID Relying Party's metadata, where the Entity is owned by "Example Company". In this example, the company is uniquely identified using a Legal Entity Identifier [@?LEI], represented as a GLUE URI [@?I-D.ietf-spice-glue-id].
 
 # Security Considerations
 
@@ -99,13 +99,13 @@ By enforcing the value for `organization_identifier` through metadata policy, th
 "metadata_policy" : {
   "openid_relying_party": {
     "organization_identifier": {
-      "value": "0195:5590026352"
+      "value": "urn:glue:iso6523:0195:5590026352"
     }
   }
 }
 ```
 
-**Example**: An example of a metadata policy in a Subordinate Statement where the `organization_identifier` is set to a fixed, and validated, value. 
+**Example**: An example of a metadata policy in a Subordinate Statement, where the `organization_identifier` is set to a fixed, validated value. In this case, the identifier is expressed in the [@?ISO.6523] format using a GLUE URI [@?I-D.ietf-spice-glue-id].
 
 # IANA Considerations
 
@@ -170,7 +170,7 @@ We would like to thank the following individuals for their comments, ideas, and 
 <reference anchor="OpenID.Federation" target="https://openid.net/specs/openid-federation-1_0.html">
   <front>
     <title>OpenID Federation 1.0</title>
-    <author fullname="R. Hedberg, Ed.">
+    <author fullname="Roland Hedberg">
       <organization>independent</organization>
     </author>
     <author fullname="Michael B. Jones">
@@ -188,7 +188,7 @@ We would like to thank the following individuals for their comments, ideas, and 
     <author fullname="Vladimir Dzhuvinov">
       <organization>Connect2id</organization>
     </author>
-    <date day="4" month="December" year="2025"/>
+    <date day="17" month="February" year="2026"/>
   </front>
 </reference>
 
@@ -199,6 +199,26 @@ We would like to thank the following individuals for their comments, ideas, and 
       <organization>IANA</organization>
     </author>
     <date/>    
+  </front>
+</reference>
+
+<reference anchor="LEI" target="https://www.iso.org/standard/78829.html">
+  <front>
+    <title>Legal Entity Identifier (LEI)</title>
+    <author>
+      <organization/>
+    </author>
+    <date year="2020"></date>
+  </front>
+</reference>
+
+<reference anchor="ISO.6523" target="https://www.iso.org/standard/82246.html">
+  <front>
+    <title>ISO/IEC 6523-1:2023. Part 1: Identification of organization identification schemes</title>
+    <author>
+      <organization/>
+    </author>
+    <date year="2023"></date>
   </front>
 </reference>
 
@@ -213,6 +233,10 @@ The technology described in this specification was made available from contribut
 # Document History
 
    [[ To be removed from the final specification ]]
+   
+   -01
+   
+   * Added information references to GLUE and LEI.
 
    -00 
 

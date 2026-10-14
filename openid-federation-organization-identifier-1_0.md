@@ -1,5 +1,5 @@
 %%%
-title = "OpenID Federation Organization Identifier Metadata Parameter 1.0 - draft 01"
+title = "OpenID Federation Organization Identifier Metadata Parameter 1.0 – draft 01"
 abbrev = "openid-federation-organization-identifier"
 ipr = "none"
 workgroup = "OpenID Connect A/B"
@@ -141,7 +141,7 @@ This specification registers the following protected resource metadata entries i
 
 We would like to thank the following individuals for their comments, ideas, and contributions to this implementation profile and to the initial set of implementations.
 
-- X Y, Z
+- Henric Norlander, Nod9
 
 {backmatter}
 

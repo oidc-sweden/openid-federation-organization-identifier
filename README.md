@@ -6,6 +6,8 @@ An Entity within a federation is, in almost all cases, owned by an organization.
 
 This specification defines the `organization_identifier` metadata parameter that allows Entities to declare an unique organization identifier.
 
+**Note:** Awaiting the OpenID Connect A/B working group to adapt/reject this specification, it is published in a 1.0 version under the OpenID Connect working group - https://www.oidc.se/specifications/openid-federation-organization-identifier-1_0.html. The working copy for that version is oidc-sweden-openid-federation-organization-identifier-1_0.md.
+
 ## Builds
 
 <!--
